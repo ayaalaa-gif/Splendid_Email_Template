@@ -1,0 +1,625 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>Splendid_Mailer</title>
+    <style type="text/css">
+        body {
+            background: #f5f5f5;
+            font-family: "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 150%;
+            color: #444;
+            margin: 0;
+            padding: 0;
+        }
+        
+        p,
+        li {
+            margin-bottom: 14px;
+            margin-top: 0;
+            font-family: "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            color: #999999;
+            line-height: 150%;
+        }
+        
+        td,
+        div {
+            font-family: "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 13px;
+            margin-top: -4px;
+        }
+        
+        a {
+            color: #013275;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        h1 {
+            margin-top: 15px;
+            padding: 0;
+            color: #D70000;
+            font-size: 30px;
+            line-height: 34px;
+            font-family: "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: normal;
+        }
+        
+        h2 {
+            margin-top: 0;
+            color: #D70000;
+            font-size: 18px;
+            font-family: "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: normal;
+        }
+        
+        h3 {
+            margin: 0;
+            font-family: "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        
+        .bgItem {
+            background: #D70000;
+        }
+        
+        ul {
+            list-style-image: url(images/bullet.png);
+        }
+        .header-content, .topic, .speaker, .Chairman, .calender, .fDoctor, .sDoctor{
+            background-image: url(images/header.png);
+            width: 800px;
+            height: 815px;
+            position: relative;
+        }
+        .date{
+            position: relative;
+        }
+        .sDoctor{
+            background: url(images/bio2.png) no-repeat ;
+            height: 663px;
+        }
+        .date span.dt-day{
+            background-color: #005678;
+            color: #ffd801;
+            display: inline-block;
+            height: 8rem;
+            width: 8rem;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            /* margin-top: 0rem; */
+            left: 9%;
+            top: 35%;
+            position: relative;
+            text-align: center;
+            line-height: 1.5rem
+        }
+        .timeZone{
+            position: absolute;
+            color: #005678;
+            left: 53.4%;
+            font-size: 1.9rem;
+            top: 43%;
+        }
+        .calender{
+            background: url(images/agenda.png);
+            height: 412px;
+            margin-top: 0.5rem;
+        }
+        .topic{
+            background: url(images/desc1.png) no-repeat;
+            height: 192px;
+        }
+        .speaker{
+            background: url(images/desc2.png) no-repeat;
+            height: 201px;
+        }
+        .Chairman{
+            background: url(images/desc3.png) no-repeat;
+            height: 299px;
+        }
+        .fDoctor{
+            background: url(images/bio1.png) no-repeat;
+            height: 417px;
+        }
+
+
+        .header-content button{
+            background-color: #ffae00;
+            color: white;
+            border: 0;
+            padding: 7px;
+            border-radius: 41px;
+            position: absolute;
+            top: 19%;
+            left: 25%;
+            width: 38%;
+            font-size: 2.1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .header-content button a{
+            color: white;
+        }
+        .topicTitle, .speakerTitle, .ChairmanTitle{
+            color: #005678;
+            position: absolute;
+            font-weight: bold;
+            top: 52.8%;
+            font-size: 2rem;
+            left: 13.5%;
+
+        }
+        ._5{
+            font-size: 5rem;
+            font-weight: bold;
+            margin-top: 2.3rem;
+            display: inline-block;
+        }
+        .march{
+            position: relative;
+            color: #005678;
+            font-size: 3.3rem;
+            font-weight: bold;
+            left: -12%;
+            top: 1rem;
+            line-height: 4rem;
+        }
+        .speakerTitle, .ChairmanTitle{
+            top: 41.8%;
+            left: 8.5%;
+        }
+        .ChairmanTitle{
+            font-size: 1.8rem;
+            left: 7.8%;
+            top: 35%;
+        }
+        .topicContent, .speakerContent, .ChairmanContent, .calDesc p, .drName_1{
+            color: white;
+            position: absolute;
+            font-weight: bold;
+            top: 48.8%;
+            font-size: 1.2rem;
+            left: 33.8%;
+
+        }
+        .dr_bio, .dr_bio_2{
+            color: #d0dee4;
+            font-weight: 500;
+            top: 32.8%;
+            font-size: 1.08rem;
+            left: 43%;
+            line-height: 1.3rem;
+            position: absolute;
+
+        }
+        .dr_bio_2{
+            top: 31.2%;
+            left: 43.1%;
+            line-height: 1.3rem;
+            font-size: 1.15rem;
+        }
+        .drName_1, .drName_2{
+            color: #ffcc00;
+            top: 16%;
+            left: 43%;
+            font-size: 1.7rem;
+            font-weight: bold;
+            position: absolute;
+        }
+        .drName_2{
+            top: 20%;
+            left: 43.1%;
+        }
+        .calDesc p{
+            font-size: 2.6rem;
+            top: 9.8%;
+            left: 9.8%;
+            transform: rotate(-4deg);
+            line-height: 3.3rem;
+        }
+        .speakerContent, .ChairmanContent{
+            color: #303030;
+            font-weight: 500;
+            top: 21.3%;
+            font-size: 1.1rem;
+            line-height: 1.4rem;
+        }
+        .ChairmanContent{
+            font-size: 1.1rem;
+            line-height: 1.3rem;
+
+        }
+        .speakerContent span, .ChairmanContent span{
+            font-weight: 800;display: inline-block; margin-bottom: 10px;
+            font-size: 1.3rem;
+
+        }
+        .header-desc p{
+            position: absolute;
+            top: 29%;
+            font-size: 5.5rem;
+            left: 25%;
+            color: #005678;
+            font-weight: 800;
+            line-height: 5.5rem;
+        }
+        .code{
+            position: absolute;
+            top: 84%;
+            left: 85%;
+            transform: rotate(-90deg);
+            color: #424242;
+            font-size: 0.7rem;
+            font-weight: bold;
+            width: 20%;
+        }
+        .header-desc p span{
+            color: #ffae00;
+        }
+        @media only screen and (max-width:480px) {
+            table[class="MainContainer"],
+            td[class="cell"] {
+                width: 100% !important;
+                height: auto !important;
+            }
+            td[class="specbundle"] {
+                width: 100% !important;
+                float: left !important;
+                font-size: 13px !important;
+                line-height: 17px !important;
+                display: block !important;
+                /* padding-bottom:15px !important; */
+            }
+            td[class="specbundle2"] {
+                width: 90% !important;
+                float: left !important;
+                font-size: 14px !important;
+                line-height: 18px !important;
+                display: block !important;
+                padding-left: 5% !important;
+                padding-right: 5% !important;
+            }
+            td[class="specbundle3"] {
+                width: 90% !important;
+                float: left !important;
+                font-size: 14px !important;
+                line-height: 18px !important;
+                display: block !important;
+                padding-left: 5% !important;
+                padding-right: 5% !important;
+                /* padding-bottom:20px !important; */
+            }
+            td[class="spechide"] {
+                display: none !important;
+            }
+            img[class="banner"] {
+                width: 100% !important;
+                height: auto !important;
+            }
+            td[class="left_pad"] {
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+        }
+        
+        @media only screen and (max-width:540px) {
+            table[class="MainContainer"],
+            td[class="cell"] {
+                width: 100% !important;
+                height: auto !important;
+            }
+            td[class="specbundle"] {
+                width: 100% !important;
+                float: left !important;
+                font-size: 13px !important;
+                line-height: 17px !important;
+                display: block !important;
+                /* padding-bottom:15px !important; */
+            }
+            td[class="specbundle2"] {
+                width: 90% !important;
+                float: left !important;
+                font-size: 14px !important;
+                line-height: 18px !important;
+                display: block !important;
+                padding-left: 5% !important;
+                padding-right: 5% !important;
+            }
+            td[class="specbundle3"] {
+                width: 90% !important;
+                float: left !important;
+                font-size: 14px !important;
+                line-height: 18px !important;
+                display: block !important;
+                padding-left: 5% !important;
+                padding-right: 5% !important;
+                /* padding-bottom:20px !important; */
+            }
+            td[class="spechide"] {
+                display: none !important;
+            }
+            img[class="banner"] {
+                width: 100% !important;
+                height: auto !important;
+            }
+            td[class="left_pad"] {
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+            .font {
+                font-size: 26px !important;
+                line-height: 29px !important;
+            }
+           
+        }
+    </style>
+    <script type="colorScheme" class="swatch active">
+        { "name":"Default", "bgBody":"#ffffff", "link":"#013275", "color":"303841", "bgItem":"D70000", "title":"#D70000" }
+    </script>
+</head>
+
+<body paddingwidth="0" paddingheight="0" bgcolor="#d1d3d4" style="padding-top: 0; padding-bottom: 0; padding-top: 0; padding-bottom: 0; background-repeat: repeat; width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; -webkit-font-smoothing: antialiased;"
+    offset="0" toppadding="0" leftpadding="0">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+            <tr>
+                <td class='movableContentContainer' align="center">
+                    <div class="movableContent" style="border: 0px; padding-top: 0px; position: relative;">
+                        <table align="center" width="800" height="100%" valign="middle" cellpadding="0" style='margin:0;' cellspacing="0" border="0" class="MainContainer">
+                            <tr>
+                                <td>
+                                    <div class="contentEditableContainer contentImageEditable">
+                                        <div class="contentEditable">
+                                            <img class="banner" src="images/logo.png" width="800" style='margin:0; padding:0;' border="0">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class='movableContentContainer' align="center">
+                    <div class="movableContent" style="border: 0px; padding-top: 0px; position: relative;">
+                        <table align="center" width="800" height="100%" valign="middle" cellpadding="0" style='margin:0;' cellspacing="0" border="0" class="MainContainer">
+                            <tr>
+                                <td>
+                                    <div class="contentEditableContainer contentImageEditable">
+                                        <div class="contentEditable header-content">
+                                            <button ><a href="https://splendidad.com/welcome/index.php" target="_blank">Please join us in</a></button>
+                                            <div class="header-desc">
+                                                <p> Lorem <br> ipsum <br> <span>Event</span>  </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class='movableContentContainer' align="center">
+                    <div class="movableContent" style="border: 0px; padding-top: 0px; position: relative;">
+                        <table align="center" width="800" height="100%" valign="middle" cellpadding="0" style='margin:0;' cellspacing="0" border="0" class="MainContainer">
+                            <tr>
+                                <td>
+                                    <div class="contentEditableContainer contentImageEditable">
+                                        <div class="contentEditable calender">
+                                            <table>
+                                                <tr>
+                                                    <td class="calDesc" width="400"><p>Lorem, ipsum <br> dolor sit amet</p>                                                    </td>
+                                                    <td class="date" width="400">
+                                                        <table width="400">
+                                                            <tr>
+                                                                <td width="400"><span class="dt-day"><span class="_5">05</span> <br> FRIDAY</span></td>
+                                                                <td width="400"><p  class="march">March  <br> 2021</p></td>
+                                                            </tr>
+                                                           
+                                                        </table>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td class="timeZone"><b>15:25-15:50</b> KSA time</td>
+                                                </tr>
+                                            </table>      
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class='movableContentContainer' align="center">
+                    <div class="movableContent" style="border: 0px; padding-top: 0px; position: relative;">
+                        <table align="center" width="800" height="100%" valign="middle" cellpadding="0" style='margin:0;' cellspacing="0" border="0" class="MainContainer">
+                            <tr>
+                                <td>
+                                    <div class="contentEditableContainer contentImageEditable">
+                                        <div class="contentEditable">
+                                            <img class="banner" src="images/sep.png" width="800" style='margin:0; padding:0;' border="0">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+           
+            <tr>
+                <td class='movableContentContainer' align="center">
+                    <div class="movableContent" style="border: 0px; padding-top: 0px; position: relative;">
+                        <table align="center" width="800" height="100%" valign="middle" cellpadding="0" style='margin:0;' cellspacing="0" border="0" class="MainContainer">
+                            <tr>
+                                <td>
+                                    <div class="contentEditableContainer contentImageEditable">
+                                        <div class="contentEditable topic">
+                                            <table>
+                                                <tr>
+                                                    <td class="topicTitle">Topic</td>
+                                                    <td class="topicContent">Lorem ipsum dolor sit amet, consectetur <br> adipisicing elit, sed do eiusmod tempor</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class='movableContentContainer' align="center">
+                    <div class="movableContent" style="border: 0px; padding-top: 0px; position: relative;">
+                        <table align="center" width="800" height="100%" valign="middle" cellpadding="0" style='margin:0;' cellspacing="0" border="0" class="MainContainer">
+                            <tr>
+                                <td>
+                                    <div class="contentEditableContainer contentImageEditable">
+                                        <div class="contentEditable speaker">
+                                            <table>
+                                                <tr>
+                                                    <td class="speakerTitle">Speaker</td>
+                                                    <td class="speakerContent"><span>Lorem ipsum</span> <br> Lorem ipsum dolor sit amet, consectetur adipisicing <br> elit, sed do eiusmod tempor incididunt ut labore et <br> dolore magna aliqua. Ut enim ad minim veniam, quis <br> brnostrud exercitation ullamco laboris nisi ut aliquip ex </td>
+                                                </tr>
+                                            </table>              
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class='movableContentContainer' align="center">
+                    <div class="movableContent" style="border: 0px; padding-top: 0px; position: relative;">
+                        <table align="center" width="800" height="100%" valign="middle" cellpadding="0" style='margin:0;' cellspacing="0" border="0" class="MainContainer">
+                            <tr>
+                                <td>
+                                    <div class="contentEditableContainer contentImageEditable">
+                                        <div class="contentEditable Chairman">
+                                            <table>
+                                                <tr>
+                                                    <td class="ChairmanTitle">Chairman</td>
+                                                    <td class="ChairmanContent"><span>Lorem ipsum dolor sit amet</span> <br> Lorem ipsum dolor sit amet, consectetur adipisicing <br> elit, sed do eiusmod tempor incididunt ut labore et <br> dolore magna aliqua. Ut enim ad minim veniam, quis <br> brnostrud exercitation ullamco laboris nisi ut aliquip ex </td>
+                                                </tr>
+                                            </table>              
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class='movableContentContainer' align="center">
+                    <div class="movableContent" style="border: 0px; padding-top: 0px; position: relative;">
+                        <table align="center" width="800" height="100%" valign="middle" cellpadding="0" style='margin:0;' cellspacing="0" border="0" class="MainContainer">
+                            <tr>
+                                <td>
+                                    <div class="contentEditableContainer contentImageEditable">
+                                        <div class="contentEditable">
+                                            <img class="banner" src="images/bg.png" width="800" style='margin:0; padding:0;' border="0">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class='movableContentContainer' align="center">
+                    <div class="movableContent" style="border: 0px; padding-top: 0px; position: relative;">
+                        <table align="center" width="800" height="100%" valign="middle" cellpadding="0" style='margin:0;' cellspacing="0" border="0" class="MainContainer">
+                            <tr>
+                                <td>
+                                    <div class="contentEditableContainer contentImageEditable">
+                                        <div class="contentEditable fDoctor">
+                                            <h2 class="drName_1">Dr. Lorem ipsum</h2>
+                                            <p class="dr_bio">
+                                                Lorem ipsum dolor sit amet, consectetur <br> adipisicing elit, sed do eiusmod tempor <br> incididunt ut labore et dolore magna <br><br>
+
+                                                aliqua. Ut enim ad minim veniam, quis <br> nostrud exercitation ullamco laboris nisi <br> ut aliquip ex ea commodo consequat. <br><br>
+                                                
+                                                Duis aute irure dolor in reprehenderit in <br> voluptate velit esse cillum dolore eu <br> fugiat nulla pariatur. Excepteur sint <br>
+                                                occaecat cupidatat non proident, sunt 
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class='movableContentContainer' align="center">
+                    <div class="movableContent" style="border: 0px; padding-top: 0px; position: relative;">
+                        <table align="center" width="800" height="100%" valign="middle" cellpadding="0" style='margin:0;' cellspacing="0" border="0" class="MainContainer">
+                            <tr>
+                                <td>
+                                    <div class="contentEditableContainer contentImageEditable">
+                                        <div class="contentEditable sDoctor">
+                                            <h2 class="drName_2">Dr. dolor sit amet</h2>
+                                            <p class="dr_bio_2">
+                                                Lorem ipsum dolor sit amet, consectetur <br> adipisicing elit, sed do eiusmod tempor <br><br>
+
+                                                incididunt ut labore et dolore magna <br> aliqua. Ut enim ad minim veniam, quis <br><br>
+                                               
+                                               nostrud exercitation ullamco laboris nisi <br> ut aliquip ex ea commodo consequat. <br> Duis aute irure dolor in reprehenderit in <br>  voluptate velit esse cillum dolore eu <br><br>
+                                               
+                                               fugiat nulla pariatur. Excepteur sint <br> occaecat cupidatat non proident, sunt in <br> culpa qui officia deserunt mollit anim id <br><br>
+                                               
+                                               est laborum. Sed ut perspiciatis unde <br> omnis iste natus error sit voluptatem <br><br>
+                                               
+                                               accusantium doloremque laudantium, <br> totam rem aperiam, eaque ipsa quae ab 
+                                            </p>
+                                            <p class="code">PR-BLI-GTY-000017-02-2021</p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class='movableContentContainer' align="center">
+                    <div class="movableContent" style="border: 0px; padding-top: 0px; position: relative;">
+                        <table align="center" width="800" height="100%" valign="middle" cellpadding="0" style='margin:0;' cellspacing="0" border="0" class="MainContainer">
+                            <tr>
+                                <td>
+                                    <div class="contentEditableContainer contentImageEditable">
+                                        <div class="contentEditable">
+                                            <img class="banner" src="images/footer.png" width="800" style='margin:0; padding:0;' border="0">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+
+         
+
+            
+
+        </tbody>
+    </table>
+</body>
+
+</html>
